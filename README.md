@@ -2,7 +2,7 @@
 
 # Meadow.Cloud.Samples
 
-Project Lab is the most functional IoT prototyping platform on the planet. No more breadboards, complicated wiring, or soldering. Project Lab was built from the ground up using the industry's most powerful, capable, and reliable sensors, components, and connectors.
+Meadow.Cloud provides secure, Over-the-Air (OtA) updates, which enable you to push a new version of a Meadow application to a device in the field over the network.
 
 ## Contents
 * [Getting Started](#getting-started)
@@ -11,11 +11,41 @@ Project Lab is the most functional IoT prototyping platform on the planet. No mo
 
 ## Getting Started
 
-Start here
+Before running any of the project samples below, make sure to go through the [Meadow.Cloud basics](http://developer.wildernesslabs.co/Meadow/Meadow.OS/Updates/) guides showing you how to provision your device, how to download and apply an update from Meadow, and make/publish a package. 
 
 ## Project Samples
 
-Project samples here
+<table>
+    </tr>
+        <tr>
+        <td>
+            <img src="Design/LedDice.png" alt="iot, dotnet, meadow, led, dice, buttons"/><br/>
+            Send an over-the-air update to change colors on an RGB LED</br>
+            <a href="Source/Hackster/LedDice/">Source Code</a>
+        </td>
+        <td>
+            <img src="Design/MemoryGame.png" alt="iot, dotnet, meadow, game, memory"/><br/>
+            Send diagnostics logs to Meadow.Cloud from a Meadow app.</br>
+            <a href="Source/Hackster/MemoryGame/">Source Code</a>
+        </td>
+        <td>
+            <img src="Design/MorseCodeTrainer.png" alt="iot, dotnet, meadow, morse-code, graphics"/><br/>
+            Send commands from Meadow.Cloud to a collection of Meadow devices.</br>
+            <a href="Source/Hackster/MorseCodeTrainer/">Source Code</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        </td>
+        <td>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        </td>
+        <td>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        </td>
+    </tr>
+</table>
 
 ## Support
 
