@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34003.232
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meadow.Cloud.Samples", "Meadow.Cloud.Samples\Meadow.Cloud.Samples.csproj", "{548A4D90-D72F-4854-A30B-405457649E56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{548A4D90-D72F-4854-A30B-405457649E56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{548A4D90-D72F-4854-A30B-405457649E56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{548A4D90-D72F-4854-A30B-405457649E56}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{548A4D90-D72F-4854-A30B-405457649E56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{548A4D90-D72F-4854-A30B-405457649E56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{548A4D90-D72F-4854-A30B-405457649E56}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F17526E-EAAE-451F-B293-1384266E1FFC}
+	EndGlobalSection
+EndGlobal

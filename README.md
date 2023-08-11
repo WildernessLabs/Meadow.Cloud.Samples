@@ -6,5 +6,19 @@ Project Lab is the most functional IoT prototyping platform on the planet. No mo
 
 ## Contents
 * [Getting Started](#getting-started)
-* [Additional Samples](#additional-samples)
+* [Project Samples](#project-samples)
 * [Support](#support)
+
+## Getting Started
+
+Start here
+
+## Project Samples
+
+Project samples here
+
+## Support
+
+Having trouble building/running these projects? 
+* File an [issue](https://github.com/WildernessLabs/Meadow.Desktop.Samples/issues) with a repro case to investigate, and/or
+* Join our [public Slack](http://slackinvite.wildernesslabs.co/), where we have an awesome community helping, sharing and building amazing things using Meadow.
