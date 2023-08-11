@@ -21,7 +21,7 @@ Before running any of the project samples below, make sure to go through the [Me
         <td>
             <img src="Design/LedDice.png" alt="iot, dotnet, meadow, led, dice, buttons"/><br/>
             Send an over-the-air update to change colors on an RGB LED</br>
-            <a href="Source/Hackster/LedDice/">Source Code</a>
+            <a href="Source/Meadow.Cloud.Samples/RgbLedUpdateSample/">Source Code</a>
         </td>
         <td>
             <img src="Design/MemoryGame.png" alt="iot, dotnet, meadow, game, memory"/><br/>
