@@ -25,12 +25,12 @@ Before running any of the project samples below, make sure to go through the [Me
         </td>
         <td>
             <img src="Design/wildernesslabs-meadow-template-blue.jpg" alt="iot, dotnet, meadow, game, memory"/><br/>
-            Send diagnostics logs to Meadow.Cloud from a Meadow app.</br>
+            Send diagnostics logs from Meadow to Meadow.Cloud</br>
             <a href="Source/Hackster/MemoryGame/">Source Code</a>
         </td>
         <td>
             <img src="Design/wildernesslabs-meadow-template-orange.jpg" alt="iot, dotnet, meadow, morse-code, graphics"/><br/>
-            Send commands from Meadow.Cloud to a collection of Meadow devices.</br>
+            Send commands to Meadow devices from Meadow.Cloud</br>
             <a href="Source/Hackster/MorseCodeTrainer/">Source Code</a>
         </td>
     </tr>
