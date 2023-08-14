@@ -3,7 +3,7 @@ using Meadow.Devices;
 using Meadow.Foundation;
 using Meadow.Foundation.Leds;
 using Meadow.Peripherals.Leds;
-using System;
+using Meadow.Update;
 using System.Threading.Tasks;
 
 namespace RgbLedUpdateSample
@@ -22,6 +22,7 @@ namespace RgbLedUpdateSample
                 greenPwmPin: Device.Pins.OnboardLedGreen,
                 bluePwmPin: Device.Pins.OnboardLedBlue,
                 CommonType.CommonAnode);
+            onboardLed.SetColor(Color.Green);
 
             return base.Initialize();
         }
@@ -30,34 +31,32 @@ namespace RgbLedUpdateSample
         {
             Resolver.Log.Info("Run...");
 
-            return CycleColors(TimeSpan.FromMilliseconds(1000));
-        }
+            var svc = Resolver.Services.Get<IUpdateService>() as UpdateService;
+            svc.ClearUpdates(); // uncomment to clear persisted info
 
-        async Task CycleColors(TimeSpan duration)
-        {
-            Resolver.Log.Info("Cycle colors...");
-
-            while (true)
+            svc.OnUpdateAvailable += (updateService, info) =>
             {
-                await ShowColorPulse(Color.Blue, duration);
-                await ShowColorPulse(Color.Cyan, duration);
-                await ShowColorPulse(Color.Green, duration);
-                await ShowColorPulse(Color.GreenYellow, duration);
-                await ShowColorPulse(Color.Yellow, duration);
-                await ShowColorPulse(Color.Orange, duration);
-                await ShowColorPulse(Color.OrangeRed, duration);
-                await ShowColorPulse(Color.Red, duration);
-                await ShowColorPulse(Color.MediumVioletRed, duration);
-                await ShowColorPulse(Color.Purple, duration);
-                await ShowColorPulse(Color.Magenta, duration);
-                await ShowColorPulse(Color.Pink, duration);
-            }
-        }
+                Resolver.Log.Info("Update available!");
 
-        async Task ShowColorPulse(Color color, TimeSpan duration)
-        {
-            await onboardLed.StartPulse(color, duration / 2);
-            await Task.Delay(duration);
+                Task.Run(async () =>
+                {
+                    await Task.Delay(5000);
+                    updateService.RetrieveUpdate(info);
+                });
+            };
+
+            svc.OnUpdateRetrieved += (updateService, info) =>
+            {
+                Resolver.Log.Info("Update retrieved!");
+
+                Task.Run(async () =>
+                {
+                    await Task.Delay(5000);
+                    updateService.ApplyUpdate(info);
+                });
+            };
+
+            return Task.CompletedTask;
         }
     }
 }
