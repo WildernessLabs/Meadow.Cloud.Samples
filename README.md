@@ -19,17 +19,17 @@ Before running any of the project samples below, make sure to go through the [Me
     </tr>
         <tr>
         <td>
-            <img src="Design/LedDice.png" alt="iot, dotnet, meadow, led, dice, buttons"/><br/>
+            <img src="Design/wildernesslabs-meadow-cloud-begginer.jpg" alt="iot, dotnet, meadow, led, dice, buttons"/><br/>
             Send an over-the-air update to change colors on an RGB LED</br>
             <a href="Source/Meadow.Cloud.Samples/RgbLedUpdateSample/">Source Code</a>
         </td>
         <td>
-            <img src="Design/MemoryGame.png" alt="iot, dotnet, meadow, game, memory"/><br/>
+            <img src="Design/wildernesslabs-meadow-template-blue.jpg" alt="iot, dotnet, meadow, game, memory"/><br/>
             Send diagnostics logs to Meadow.Cloud from a Meadow app.</br>
             <a href="Source/Hackster/MemoryGame/">Source Code</a>
         </td>
         <td>
-            <img src="Design/MorseCodeTrainer.png" alt="iot, dotnet, meadow, morse-code, graphics"/><br/>
+            <img src="Design/wildernesslabs-meadow-template-orange.jpg" alt="iot, dotnet, meadow, morse-code, graphics"/><br/>
             Send commands from Meadow.Cloud to a collection of Meadow devices.</br>
             <a href="Source/Hackster/MorseCodeTrainer/">Source Code</a>
         </td>
