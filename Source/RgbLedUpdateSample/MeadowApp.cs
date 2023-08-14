@@ -2,6 +2,7 @@
 using Meadow.Devices;
 using Meadow.Foundation;
 using Meadow.Foundation.Leds;
+using Meadow.Hardware;
 using Meadow.Peripherals.Leds;
 using Meadow.Update;
 using System.Threading.Tasks;
@@ -36,7 +37,13 @@ public class MeadowApp : App<F7FeatherV2>
             greenPwmPin: Device.Pins.OnboardLedGreen,
             bluePwmPin: Device.Pins.OnboardLedBlue,
             CommonType.CommonAnode);
-        onboardLed.SetColor(Color.Green);
+        onboardLed.StartBlink(Color.Red);
+
+        var wifi = Device.NetworkAdapters.Primary<IWiFiNetworkAdapter>();
+        wifi.NetworkConnected += (s, e) =>
+        {
+            onboardLed.StartBlink(Color.Green);
+        };
 
         return base.Initialize();
     }
