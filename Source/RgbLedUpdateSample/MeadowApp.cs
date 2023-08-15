@@ -15,11 +15,15 @@ meadow cloud login
 
 meadow device provision
 
-meadow package create -a your_app_folder/bin/Debug/netstandard2.1/postlink_bin -v 0.9.8.1.
+build application
+
+meadow package create -a bin/Debug/netstandard2.1/postlink_bin
 
 meadow package upload -p [path to .mpak file]
 
-meadow package publish -p your_package_id
+meadow collection list
+
+meadow package publish -p your_package_id -c your_collection_id 
 
 */
 
@@ -42,7 +46,7 @@ public class MeadowApp : App<F7FeatherV2>
         var wifi = Device.NetworkAdapters.Primary<IWiFiNetworkAdapter>();
         wifi.NetworkConnected += (s, e) =>
         {
-            onboardLed.StartBlink(Color.Green);
+            onboardLed.StartBlink(Color.Purple);
         };
 
         return base.Initialize();
@@ -57,6 +61,7 @@ public class MeadowApp : App<F7FeatherV2>
 
         svc.OnUpdateAvailable += (updateService, info) =>
         {
+            onboardLed.StartBlink(Color.Orange);
             Resolver.Log.Info("Update available!");
 
             Task.Run(async () =>
@@ -68,6 +73,7 @@ public class MeadowApp : App<F7FeatherV2>
 
         svc.OnUpdateRetrieved += (updateService, info) =>
         {
+            onboardLed.StartBlink(Color.Yellow);
             Resolver.Log.Info("Update retrieved!");
 
             Task.Run(async () =>
