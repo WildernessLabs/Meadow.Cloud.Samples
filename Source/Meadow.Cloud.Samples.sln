@@ -21,7 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MQTTnet", "..\..\MQTTnet\So
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meadow.Foundation.Core", "..\..\Meadow.Foundation\Source\Meadow.Foundation.Core\Meadow.Foundation.Core.csproj", "{D984BC1F-B983-498A-ABF4-F75652091018}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RgbLedUpdateSample", "RgbLedUpdateSample\RgbLedUpdateSample.csproj", "{92AC43E5-8E65-42DF-A23B-A6F6CF58BA29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RgbLedUpdateSample", "RgbLedUpdateSample\RgbLedUpdateSample.csproj", "{92AC43E5-8E65-42DF-A23B-A6F6CF58BA29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudLogging", "CloudLogging\CloudLogging.csproj", "{803EDBD9-8D42-4156-B4B3-7226BD392F80}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meadow.Logging.LogProviders", "..\..\Meadow.Logging\Source\Meadow.Logging.LogProviders\Driver\Meadow.Logging.LogProviders.csproj", "{89908FDD-3242-4E37-9CE6-D06DA7EA1456}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +81,18 @@ Global
 		{92AC43E5-8E65-42DF-A23B-A6F6CF58BA29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92AC43E5-8E65-42DF-A23B-A6F6CF58BA29}.Release|Any CPU.Build.0 = Release|Any CPU
 		{92AC43E5-8E65-42DF-A23B-A6F6CF58BA29}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{803EDBD9-8D42-4156-B4B3-7226BD392F80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{803EDBD9-8D42-4156-B4B3-7226BD392F80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{803EDBD9-8D42-4156-B4B3-7226BD392F80}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{803EDBD9-8D42-4156-B4B3-7226BD392F80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{803EDBD9-8D42-4156-B4B3-7226BD392F80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{803EDBD9-8D42-4156-B4B3-7226BD392F80}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{89908FDD-3242-4E37-9CE6-D06DA7EA1456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89908FDD-3242-4E37-9CE6-D06DA7EA1456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89908FDD-3242-4E37-9CE6-D06DA7EA1456}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{89908FDD-3242-4E37-9CE6-D06DA7EA1456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89908FDD-3242-4E37-9CE6-D06DA7EA1456}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89908FDD-3242-4E37-9CE6-D06DA7EA1456}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +106,7 @@ Global
 		{46874B9C-7498-4446-8DD2-21B58374E50F} = {015174AF-3685-45FA-B7CA-7CFAF6223E84}
 		{6820D1CE-5E06-4FD4-BBAB-B61B92DD4CF0} = {015174AF-3685-45FA-B7CA-7CFAF6223E84}
 		{D984BC1F-B983-498A-ABF4-F75652091018} = {015174AF-3685-45FA-B7CA-7CFAF6223E84}
+		{89908FDD-3242-4E37-9CE6-D06DA7EA1456} = {015174AF-3685-45FA-B7CA-7CFAF6223E84}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6F17526E-EAAE-451F-B293-1384266E1FFC}
