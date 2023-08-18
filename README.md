@@ -24,9 +24,9 @@ Before running any of the project samples below, make sure to go through the [Me
             <a href="Source/RgbLedUpdateSample/">Source Code</a>
         </td>
         <td>
-            <img src="Design/wildernesslabs-meadow-template-blue.jpg" alt="iot, dotnet, meadow, game, memory"/><br/>
+            <img src="Design/wildernesslabs-meadow-cloud-log.jpg" alt="iot, dotnet, meadow, game, memory"/><br/>
             Send diagnostics logs from Meadow to Meadow.Cloud</br>
-            <a href="Source/Hackster/MemoryGame/">Source Code</a>
+            <a href="Source/CloudLogging/">Source Code</a>
         </td>
         <td>
             <img src="Design/wildernesslabs-meadow-template-orange.jpg" alt="iot, dotnet, meadow, morse-code, graphics"/><br/>
