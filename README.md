@@ -29,9 +29,9 @@ Before running any of the project samples below, make sure to go through the [Me
             <a href="Source/CloudLogging/">Source Code</a>
         </td>
         <td>
-            <img src="Design/wildernesslabs-meadow-template-orange.jpg" alt="iot, dotnet, meadow, morse-code, graphics"/><br/>
-            Send commands to Meadow devices from Meadow.Cloud</br>
-            <a href="Source/Hackster/MorseCodeTrainer/">Source Code</a>
+            <img src="Design/wildernesslabs-meadow-health-metrics.jpg" alt="iot, dotnet, meadow, morse-code, graphics"/><br/>
+            Check your Meadow's Health Metrics on Meadow.Cloud</br>
+            <a href="Source/HealthMetricsMonitoring/">Source Code</a>
         </td>
     </tr>
     <tr>
