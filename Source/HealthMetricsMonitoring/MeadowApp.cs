@@ -1,9 +1,6 @@
 ﻿using Meadow;
 using Meadow.Devices;
-using Meadow.Foundation;
-using Meadow.Foundation.Leds;
 using Meadow.Logging;
-using Meadow.Peripherals.Leds;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -76,27 +73,5 @@ namespace HealthMetricsMonitoring
         {
             return letters[rnd.Next(0, letters.Length - 1)];
         }
-
-        //RgbPwmLed onboardLed;
-
-        //public override Task Initialize()
-        //{
-        //    Resolver.Log.Info("Initialize...");
-
-        //    return Task.CompletedTask;
-        //}
-
-        //public override Task Run()
-        //{
-        //    Resolver.Log.Info("Run...");
-
-        //    while (true)
-        //    {
-        //        Resolver.Log.Info("Beat.");
-        //        Thread.Sleep(3000);
-        //    }
-
-        //    return Task.CompletedTask;
-        //}
     }
 }
