@@ -2,62 +2,87 @@
 using Meadow.Devices;
 using Meadow.Foundation;
 using Meadow.Foundation.Leds;
+using Meadow.Hardware;
 using Meadow.Peripherals.Leds;
-using System;
+using Meadow.Update;
 using System.Threading.Tasks;
 
-namespace RgbLedUpdateSample
+namespace RgbLedUpdateSample;
+
+/*
+
+meadow cloud login
+
+meadow device provision
+
+build application
+
+meadow package create -a bin/Debug/netstandard2.1/postlink_bin
+
+meadow package upload -p [path to .mpak file]
+
+meadow collection list
+
+meadow package publish -p your_package_id -c your_collection_id 
+
+*/
+
+// Change F7FeatherV2 to F7FeatherV1 for V1.x boards
+public class MeadowApp : App<F7FeatherV2>
 {
-    // Change F7FeatherV2 to F7FeatherV1 for V1.x boards
-    public class MeadowApp : App<F7FeatherV2>
+    RgbPwmLed onboardLed;
+
+    public override Task Initialize()
     {
-        RgbPwmLed onboardLed;
+        Resolver.Log.Info("Initialize...");
 
-        public override Task Initialize()
+        onboardLed = new RgbPwmLed(
+            redPwmPin: Device.Pins.OnboardLedRed,
+            greenPwmPin: Device.Pins.OnboardLedGreen,
+            bluePwmPin: Device.Pins.OnboardLedBlue,
+            CommonType.CommonAnode);
+        onboardLed.StartBlink(Color.Red);
+
+        var wifi = Device.NetworkAdapters.Primary<IWiFiNetworkAdapter>();
+        wifi.NetworkConnected += (s, e) =>
         {
-            Resolver.Log.Info("Initialize...");
+            onboardLed.StartBlink(Color.Purple);
+        };
 
-            onboardLed = new RgbPwmLed(
-                redPwmPin: Device.Pins.OnboardLedRed,
-                greenPwmPin: Device.Pins.OnboardLedGreen,
-                bluePwmPin: Device.Pins.OnboardLedBlue,
-                CommonType.CommonAnode);
+        return base.Initialize();
+    }
 
-            return base.Initialize();
-        }
+    public override Task Run()
+    {
+        Resolver.Log.Info("Run...");
 
-        public override Task Run()
+        var svc = Resolver.Services.Get<IUpdateService>() as UpdateService;
+        svc.ClearUpdates(); // uncomment to clear persisted info
+
+        svc.OnUpdateAvailable += (updateService, info) =>
         {
-            Resolver.Log.Info("Run...");
+            onboardLed.StartBlink(Color.Orange);
+            Resolver.Log.Info("Update available!");
 
-            return CycleColors(TimeSpan.FromMilliseconds(1000));
-        }
-
-        async Task CycleColors(TimeSpan duration)
-        {
-            Resolver.Log.Info("Cycle colors...");
-
-            while (true)
+            Task.Run(async () =>
             {
-                await ShowColorPulse(Color.Blue, duration);
-                await ShowColorPulse(Color.Cyan, duration);
-                await ShowColorPulse(Color.Green, duration);
-                await ShowColorPulse(Color.GreenYellow, duration);
-                await ShowColorPulse(Color.Yellow, duration);
-                await ShowColorPulse(Color.Orange, duration);
-                await ShowColorPulse(Color.OrangeRed, duration);
-                await ShowColorPulse(Color.Red, duration);
-                await ShowColorPulse(Color.MediumVioletRed, duration);
-                await ShowColorPulse(Color.Purple, duration);
-                await ShowColorPulse(Color.Magenta, duration);
-                await ShowColorPulse(Color.Pink, duration);
-            }
-        }
+                await Task.Delay(5000);
+                updateService.RetrieveUpdate(info);
+            });
+        };
 
-        async Task ShowColorPulse(Color color, TimeSpan duration)
+        svc.OnUpdateRetrieved += (updateService, info) =>
         {
-            await onboardLed.StartPulse(color, duration / 2);
-            await Task.Delay(duration);
-        }
+            onboardLed.StartBlink(Color.Yellow);
+            Resolver.Log.Info("Update retrieved!");
+
+            Task.Run(async () =>
+            {
+                await Task.Delay(5000);
+                updateService.ApplyUpdate(info);
+            });
+        };
+
+        return Task.CompletedTask;
     }
 }

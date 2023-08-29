@@ -3,8 +3,8 @@
 # http://developer.wildernesslabs.co/Meadow/Meadow.OS/Configuration/OS_Device_Configuration/
 
 Device:
-  # Name of the device on the network.
-  Name: MeadowF7V2_ConfigSample
+ # Name of the device on the network.
+ Name: MeadowF7V2_ConfigSample
 
   # Uncomment if SD card hardware present on this hardware (e.g., Core-Compute module with SD add-on)? Optional; default value is `false`.
 #  SdStorageSupported: true
@@ -23,18 +23,6 @@ Coprocessor:
 
 # Network configuration.
 Network:
-#  Interfaces:
-#    - Name: Ethernet
-#      UseDHCP: false
-#      IPAddress: 192.168.1.60
-#      NetMask: 255.255.255.0
-#      Gateway: 192.168.1.254
-#    - Name: WiFi
-#      UseDHCP: true
-#      IPAddress:
-#      NetMask:
-#      Gateway:
-
   # Which interface should be used?
   DefaultInterface: WiFi
 
@@ -51,7 +39,7 @@ Network:
    - 2.pool.ntp.org
    - 3.pool.ntp.org
 
-  # IP addresses of the DNS servers.
+ # IP addresses of the DNS servers.
   DnsServers:
     - 1.1.1.1
     - 8.8.8.8

@@ -2,9 +2,6 @@
 # To learn more about these config options, including custom application configuration settings, check out the Application Settings Configuration documentation.
 # http://developer.wildernesslabs.co/Meadow/Meadow.OS/Configuration/Application_Settings_Configuration/
 
-Update:
-  Enabled: true
-
 Lifecycle:
   # Control whether Meadow will restart when an unhandled app exception occurs. Combine with Lifecycle > AppFailureRestartDelaySeconds to control restart timing.
   RestartOnAppFailure: false
@@ -15,3 +12,11 @@ Lifecycle:
 Logging:
   LogLevel:
     Default: Trace
+
+MeadowCloud:
+  Hostname: https://staging.meadowcloud.dev
+  DataHostname: https://collector-staging.meadowcloud.dev
+
+HealthMetrics:
+  Enabled: true
+  Interval: 1
