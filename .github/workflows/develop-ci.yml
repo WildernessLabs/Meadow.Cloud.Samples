@@ -61,6 +61,13 @@ jobs:
         path: Meadow.Foundation
         ref: develop
 
+    - name: Checkout Meadow.Foundation.Grove
+      uses: actions/checkout@v3
+      with:
+        repository: WildernessLabs/Meadow.Foundation.Grove
+        path: Meadow.Foundation.Grove
+        ref: develop
+
     - name: Checkout Meadow.Cloud.Samples
       uses: actions/checkout@v3
       with:
