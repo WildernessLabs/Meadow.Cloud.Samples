@@ -36,6 +36,23 @@ Before running any of the project samples below, make sure to go through the [Me
     </tr>
     <tr>
         <td>
+            <a href="Source/Meadow.Cloud_Logging/"><img src="Design/wildernesslabs-projectlab-meadow-cloud-logging.jpg"/></a><br/>
+            Send environmental data to Meadow.Cloud using Log Event</br>
+            <a href="Source/Meadow.Cloud_Logging/">Source Code</a>
+        </td>
+        <td>
+            <a href="Source/Meadow.Cloud_Client/"><img src="Design/wildernesslabs-projectlab-meadow-cloud-client.png"/></a><br/>
+            Get log event data from Meadow.Cloud using its client API<br/>
+            <a href="Source/Meadow.Cloud_Client/">Source Code</a>
+        </td>
+        <td>
+            <a href="Source/Meadow.Cloud_Command/"><img src="Design/wildernesslabs-projectlab-meadow-cloud-relay-command.png"/></a><br/>
+            Use Meadow.Cloud commands to control a four channel relay</br>
+            <a href="Source/Meadow.Cloud_Command/">Source Code</a>
+        </td> 
+    </tr>
+    <tr>
+        <td>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
         </td>
         <td>
