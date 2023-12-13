@@ -8,8 +8,8 @@ namespace Meadow.Cloud_Command.Controllers
         private readonly int rowHeight = 60;
         private readonly int rowMargin = 15;
 
-        private Meadow.Foundation.Color backgroundColor = Meadow.Foundation.Color.FromHex("#F3F7FA");
-        private Meadow.Foundation.Color foregroundColor = Meadow.Foundation.Color.White;
+        private Meadow.Color backgroundColor = Meadow.Color.FromHex("#F3F7FA");
+        private Meadow.Color foregroundColor = Meadow.Color.White;
 
         private Font12x20 font12X20 = new Font12x20();
         private Font6x8 font6x8 = new Font6x8();
@@ -63,7 +63,7 @@ namespace Meadow.Cloud_Command.Controllers
             var image = Image.LoadFromResource("Meadow.Cloud_Command.Resources.img_meadow.bmp");
             var displayImage = new Picture(0, 0, DisplayScreen.Width, DisplayScreen.Height, image)
             {
-                BackColor = Meadow.Foundation.Color.FromHex("#B35E2C"),
+                BackColor = Meadow.Color.FromHex("#B35E2C"),
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center,
             };
@@ -80,7 +80,7 @@ namespace Meadow.Cloud_Command.Controllers
 
             DataLayout.Controls.Add(new Box(0, 0, DisplayScreen.Width, rowHeight)
             {
-                ForeColor = Meadow.Foundation.Color.FromHex("844936")
+                ForeColor = Meadow.Color.FromHex("844936")
             });
 
             var wifiImage = Image.LoadFromResource("Meadow.Cloud_Command.Resources.img_wifi_connecting.bmp");
@@ -119,7 +119,7 @@ namespace Meadow.Cloud_Command.Controllers
 
             DataLayout.Controls.Add(new Box(0, rowHeight, DisplayScreen.Width, DisplayScreen.Height - rowHeight)
             {
-                ForeColor = Meadow.Foundation.Color.FromHex("B35E2C")
+                ForeColor = Meadow.Color.FromHex("B35E2C")
             });
 
             int relayWidth = 71;
@@ -134,7 +134,7 @@ namespace Meadow.Cloud_Command.Controllers
                 relayWidth,
                 relayHeight)
             {
-                ForeColor = Meadow.Foundation.Color.White,
+                ForeColor = Meadow.Color.White,
                 Filled = false
             });
             DataLayout.Controls.Add(new Label(
@@ -167,7 +167,7 @@ namespace Meadow.Cloud_Command.Controllers
                 relayWidth,
                 relayHeight)
             {
-                ForeColor = Meadow.Foundation.Color.White,
+                ForeColor = Meadow.Color.White,
                 Filled = false
             });
             DataLayout.Controls.Add(new Label(
@@ -200,7 +200,7 @@ namespace Meadow.Cloud_Command.Controllers
                 relayWidth,
                 relayHeight)
             {
-                ForeColor = Meadow.Foundation.Color.White,
+                ForeColor = Meadow.Color.White,
                 Filled = false
             });
             DataLayout.Controls.Add(new Label(
@@ -233,7 +233,7 @@ namespace Meadow.Cloud_Command.Controllers
                 relayWidth,
                 relayHeight)
             {
-                ForeColor = Meadow.Foundation.Color.White,
+                ForeColor = Meadow.Color.White,
                 Filled = false
             });
             DataLayout.Controls.Add(new Label(

@@ -1,5 +1,4 @@
-﻿using Meadow.Foundation;
-using Meadow.Foundation.Graphics;
+﻿using Meadow.Foundation.Graphics;
 using Meadow.Foundation.Graphics.MicroLayout;
 using System.Collections.Generic;
 
@@ -73,7 +72,7 @@ internal class DisplayController
         var image = Image.LoadFromResource("Meadow.Cloud_Client.Resources.img_meadow.bmp");
         var displayImage = new Picture(0, 0, DisplayScreen.Width, DisplayScreen.Height, image)
         {
-            BackColor = Meadow.Foundation.Color.FromHex("14607F"),
+            BackColor = Meadow.Color.FromHex("14607F"),
             HorizontalAlignment = HorizontalAlignment.Center,
             VerticalAlignment = VerticalAlignment.Center,
         };
