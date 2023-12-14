@@ -1,5 +1,5 @@
 ﻿using Meadow.Foundation.Graphics;
-using Meadow.Foundation.Leds;
+using Meadow.Peripherals.Leds;
 using Meadow.Peripherals.Sensors.Buttons;
 
 namespace Meadow.Cloud_Client.Hardware;
@@ -12,7 +12,7 @@ internal interface IMeadowCloudClientHardware
 
     public IButton LeftButton { get; }
 
-    public RgbPwmLed RgbPwmLed { get; }
+    public IRgbPwmLed RgbPwmLed { get; }
 
     public void Initialize();
 }

@@ -1,5 +1,4 @@
-﻿using Meadow.Foundation;
-using Meadow.Foundation.Graphics;
+﻿using Meadow.Foundation.Graphics;
 using Meadow.Foundation.Graphics.MicroLayout;
 
 namespace Meadow.Cloud_Logging.Controllers
