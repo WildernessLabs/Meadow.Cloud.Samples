@@ -63,7 +63,9 @@ namespace Meadow.Cloud_Command
                     case 1:
                     case 2:
                     case 3:
-                        hardware.FourChannelRelay.Relays[command.Relay].IsOn = command.IsOn;
+                        hardware.FourChannelRelay.Relays[command.Relay].State = command.IsOn 
+                            ? Peripherals.Relays.RelayState.Open 
+                            : Peripherals.Relays.RelayState.Closed;
                         break;
                     case 4:
                         if (command.IsOn)
