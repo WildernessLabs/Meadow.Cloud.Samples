@@ -52,7 +52,7 @@ namespace Meadow.Cloud_Logging.Controllers
         {
             SplashLayout = new AbsoluteLayout(DisplayScreen, 0, 0, DisplayScreen.Width, DisplayScreen.Height)
             {
-                Visible = false
+                IsVisible = false
             };
 
             var image = Image.LoadFromResource("Meadow.Cloud_Logging.Resources.img_meadow.bmp");
@@ -70,7 +70,7 @@ namespace Meadow.Cloud_Logging.Controllers
         {
             DataLayout = new AbsoluteLayout(DisplayScreen, 0, 0, DisplayScreen.Width, DisplayScreen.Height)
             {
-                Visible = false
+                IsVisible = false
             };
 
             DataLayout.Controls.Add(new Box(0, 0, DisplayScreen.Width, rowHeight)
@@ -182,14 +182,14 @@ namespace Meadow.Cloud_Logging.Controllers
 
         public void ShowSplashScreen()
         {
-            DataLayout.Visible = false;
-            SplashLayout.Visible = true;
+            DataLayout.IsVisible = false;
+            SplashLayout.IsVisible = true;
         }
 
         public void ShowDataScreen()
         {
-            SplashLayout.Visible = false;
-            DataLayout.Visible = true;
+            SplashLayout.IsVisible = false;
+            DataLayout.IsVisible = true;
         }
 
         public void UpdateStatus(string status)

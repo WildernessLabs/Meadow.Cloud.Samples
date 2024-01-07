@@ -57,7 +57,7 @@ namespace Meadow.Cloud_Command.Controllers
         {
             SplashLayout = new AbsoluteLayout(DisplayScreen, 0, 0, DisplayScreen.Width, DisplayScreen.Height)
             {
-                Visible = false
+                IsVisible = false
             };
 
             var image = Image.LoadFromResource("Meadow.Cloud_Command.Resources.img_meadow.bmp");
@@ -75,7 +75,7 @@ namespace Meadow.Cloud_Command.Controllers
         {
             DataLayout = new AbsoluteLayout(DisplayScreen, 0, 0, DisplayScreen.Width, DisplayScreen.Height)
             {
-                Visible = false
+                IsVisible = false
             };
 
             DataLayout.Controls.Add(new Box(0, 0, DisplayScreen.Width, rowHeight)
@@ -135,7 +135,7 @@ namespace Meadow.Cloud_Command.Controllers
                 relayHeight)
             {
                 ForeColor = Meadow.Color.White,
-                Filled = false
+                IsFilled = false
             });
             DataLayout.Controls.Add(new Label(
                 margin,
@@ -168,7 +168,7 @@ namespace Meadow.Cloud_Command.Controllers
                 relayHeight)
             {
                 ForeColor = Meadow.Color.White,
-                Filled = false
+                IsFilled = false
             });
             DataLayout.Controls.Add(new Label(
                 margin + relayWidth + relaySpacing,
@@ -201,7 +201,7 @@ namespace Meadow.Cloud_Command.Controllers
                 relayHeight)
             {
                 ForeColor = Meadow.Color.White,
-                Filled = false
+                IsFilled = false
             });
             DataLayout.Controls.Add(new Label(
                 margin + relayWidth * 2 + relaySpacing * 2,
@@ -234,7 +234,7 @@ namespace Meadow.Cloud_Command.Controllers
                 relayHeight)
             {
                 ForeColor = Meadow.Color.White,
-                Filled = false
+                IsFilled = false
             });
             DataLayout.Controls.Add(new Label(
                 margin + relayWidth * 3 + relaySpacing * 3,
@@ -263,14 +263,14 @@ namespace Meadow.Cloud_Command.Controllers
 
         public void ShowSplashScreen()
         {
-            DataLayout.Visible = false;
-            SplashLayout.Visible = true;
+            DataLayout.IsVisible = false;
+            SplashLayout.IsVisible = true;
         }
 
         public void ShowDataScreen()
         {
-            SplashLayout.Visible = false;
-            DataLayout.Visible = true;
+            SplashLayout.IsVisible = false;
+            DataLayout.IsVisible = true;
         }
 
         public void UpdateStatus(string status)
