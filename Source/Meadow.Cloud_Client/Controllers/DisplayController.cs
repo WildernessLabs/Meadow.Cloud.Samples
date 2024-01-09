@@ -1,5 +1,4 @@
-﻿using Meadow.Foundation;
-using Meadow.Foundation.Graphics;
+﻿using Meadow.Foundation.Graphics;
 using Meadow.Foundation.Graphics.MicroLayout;
 using System.Collections.Generic;
 
@@ -67,13 +66,13 @@ internal class DisplayController
     {
         SplashLayout = new AbsoluteLayout(DisplayScreen, 0, 0, DisplayScreen.Width, DisplayScreen.Height)
         {
-            Visible = false
+            IsVisible = false
         };
 
         var image = Image.LoadFromResource("Meadow.Cloud_Client.Resources.img_meadow.bmp");
         var displayImage = new Picture(0, 0, DisplayScreen.Width, DisplayScreen.Height, image)
         {
-            BackColor = Meadow.Foundation.Color.FromHex("14607F"),
+            BackColor = Meadow.Color.FromHex("14607F"),
             HorizontalAlignment = HorizontalAlignment.Center,
             VerticalAlignment = VerticalAlignment.Center,
         };
@@ -86,7 +85,7 @@ internal class DisplayController
         DataLayout = new AbsoluteLayout(DisplayScreen, 0, 0, DisplayScreen.Width, DisplayScreen.Height)
         {
             BackgroundColor = backgroundColor,
-            Visible = false
+            IsVisible = false
         };
 
         DataLayout.Controls.Add(new Box(0, 0, DisplayScreen.Width, rowHeight)
@@ -146,7 +145,7 @@ internal class DisplayController
             BackgroundColor = foregroundColor,
             AxisColor = TextColor,
             ShowYAxisLabels = true,
-            Visible = false,
+            IsVisible = false,
             AlwaysShowYOrigin = false,
         };
         LineChartSeries = new LineChartSeries()
@@ -227,14 +226,14 @@ internal class DisplayController
 
     public void ShowSplashScreen()
     {
-        DataLayout.Visible = false;
-        SplashLayout.Visible = true;
+        DataLayout.IsVisible = false;
+        SplashLayout.IsVisible = true;
     }
 
     public void ShowDataScreen()
     {
-        SplashLayout.Visible = false;
-        DataLayout.Visible = true;
+        SplashLayout.IsVisible = false;
+        DataLayout.IsVisible = true;
     }
 
     public void UpdateStatus(string status)
@@ -290,11 +289,11 @@ internal class DisplayController
 
         if (!isConnected && LineChartSeries.Points.Count == 0)
         {
-            ConnectionErrorLabel.Visible = true;
+            ConnectionErrorLabel.IsVisible = true;
         }
         else
         {
-            ConnectionErrorLabel.Visible = false;
+            ConnectionErrorLabel.IsVisible = false;
         }
     }
 
