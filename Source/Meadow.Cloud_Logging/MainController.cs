@@ -2,7 +2,6 @@
 using Meadow.Cloud_Logging.Hardware;
 using Meadow.Hardware;
 using Meadow.Logging;
-using Meadow.Units;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -36,18 +35,16 @@ namespace Meadow.Cloud_Logging
             displayController.ShowSplashScreen();
             Thread.Sleep(3000);
             displayController.ShowDataScreen();
-
-            hardware.EnvironmentalSensor.Updated += EnvironmentalSensorUpdated;
         }
 
-        private void EnvironmentalSensorUpdated(object sender, IChangeResult<(Temperature? Temperature, RelativeHumidity? Humidity, Pressure? Pressure, Resistance? GasResistance)> e)
+        private void RecordSensor()
         {
             hardware.RgbPwmLed.StartBlink(Color.Orange);
 
             displayController.UpdateAtmosphericConditions(
-                temperature: $"{e.New.Temperature.Value.Celsius:N0}",
-                pressure: $"{e.New.Pressure.Value.Millibar:N0}",
-                humidity: $"{e.New.Humidity.Value.Percent:N0}");
+                temperature: $"{hardware.TemperatureSensor.Temperature.Value.Celsius:N0}",
+                pressure: $"{hardware.BarometricPressureSensor.Pressure.Value.Millibar:N0}",
+                humidity: $"{hardware.HumiditySensor.Humidity.Value.Percent:N0}");
 
             if (network.IsConnected)
             {
@@ -58,9 +55,9 @@ namespace Meadow.Cloud_Logging
                 var cloudLogger = Resolver.Services.Get<CloudLogger>();
                 cloudLogger.LogEvent(1000, "environment reading", new Dictionary<string, object>()
                 {
-                    { "pressure", $"{e.New.Pressure.Value.Millibar:N2}" },
-                    { "humidity", $"{e.New.Humidity.Value.Percent:N2}" },
-                    { "temperature", $"{e.New.Temperature.Value.Celsius:N2}" }
+                    { "temperature", $"{hardware.TemperatureSensor.Temperature.Value.Celsius:N2}" },
+                    { "pressure", $"{hardware.BarometricPressureSensor.Pressure.Value.Millibar:N2}" },
+                    { "humidity", $"{hardware.HumiditySensor.Humidity.Value.Percent:N2}" },
                 });
 
                 displayController.UpdateSyncStatus(false);
@@ -80,7 +77,9 @@ namespace Meadow.Cloud_Logging
 
         public async Task Run()
         {
-            hardware.EnvironmentalSensor.StartUpdating(TimeSpan.FromMinutes(30));
+            hardware.TemperatureSensor.StartUpdating(TimeSpan.FromMinutes(1));
+            hardware.BarometricPressureSensor.StartUpdating(TimeSpan.FromMinutes(1));
+            hardware.HumiditySensor.StartUpdating(TimeSpan.FromMinutes(1));
 
             while (true)
             {
@@ -89,6 +88,8 @@ namespace Meadow.Cloud_Logging
                 if (network.IsConnected)
                 {
                     displayController.UpdateStatus(DateTime.Now.AddHours(TIMEZONE_OFFSET).ToString("hh:mm tt dd/MM/yy"));
+
+                    RecordSensor();
 
                     await Task.Delay(TimeSpan.FromMinutes(1));
                 }
