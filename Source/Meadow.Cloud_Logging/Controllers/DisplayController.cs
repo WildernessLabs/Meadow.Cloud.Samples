@@ -1,5 +1,6 @@
 ﻿using Meadow.Foundation.Graphics;
 using Meadow.Foundation.Graphics.MicroLayout;
+using Meadow.Peripherals.Displays;
 
 namespace Meadow.Cloud_Logging.Controllers
 {
@@ -34,7 +35,7 @@ namespace Meadow.Cloud_Logging.Controllers
 
         protected Label Humidity { get; set; }
 
-        public DisplayController(IGraphicsDisplay display)
+        public DisplayController(IPixelDisplay display)
         {
             DisplayScreen = new DisplayScreen(display, RotationType._270Degrees)
             {

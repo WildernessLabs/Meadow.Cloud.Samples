@@ -1,29 +1,38 @@
 ﻿using Meadow.Devices;
-using Meadow.Foundation.Graphics;
-using Meadow.Foundation.Sensors.Atmospheric;
+using Meadow.Peripherals.Displays;
 using Meadow.Peripherals.Leds;
+using Meadow.Peripherals.Sensors;
+using Meadow.Peripherals.Sensors.Atmospheric;
 
 namespace Meadow.Cloud_Logging.Hardware
 {
     internal class MeadowCloudLoggingHardware : IMeadowCloudLoggingHardware
     {
-        protected IProjectLabHardware ProjLab { get; private set; }
+        protected ProjectLabHardwareBase ProjectLab { get; private set; }
 
-        public IGraphicsDisplay Display { get; set; }
+        public IPixelDisplay Display { get; set; }
 
-        public Bme68x EnvironmentalSensor { get; set; }
+        public ITemperatureSensor TemperatureSensor { get; set; }
+
+        public IBarometricPressureSensor BarometricPressureSensor { get; set; }
+
+        public IHumiditySensor HumiditySensor { get; set; }
 
         public IRgbPwmLed RgbPwmLed { get; set; }
 
         public void Initialize()
         {
-            ProjLab = ProjectLab.Create();
+            ProjectLab = Devices.ProjectLab.Create() as ProjectLabHardwareBase;
 
-            Display = ProjLab.Display;
+            Display = ProjectLab.Display;
 
-            RgbPwmLed = ProjLab.RgbLed;
+            RgbPwmLed = ProjectLab.RgbLed;
 
-            EnvironmentalSensor = ProjLab.EnvironmentalSensor;
+            TemperatureSensor = ProjectLab.TemperatureSensor;
+
+            BarometricPressureSensor = ProjectLab.BarometricPressureSensor;
+
+            HumiditySensor = ProjectLab.HumiditySensor;
         }
     }
 }

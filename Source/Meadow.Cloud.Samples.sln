@@ -53,7 +53,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sensors.Motion.Bmi270", "..
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4-ChannelSpdtRelay", "..\..\Meadow.Foundation.Grove\Source\4-ChannelSpdtRelay\Driver\4-ChannelSpdtRelay.csproj", "{957483A1-363F-453E-BC55-CFF884E3AC82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meadow.Cloud_OTA", "Meadow.Cloud_OTA\Meadow.Cloud_OTA.csproj", "{F5F16035-4974-4620-ABF6-7AF002AEF932}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meadow.Cloud_OTA", "Meadow.Cloud_OTA\Meadow.Cloud_OTA.csproj", "{F5F16035-4974-4620-ABF6-7AF002AEF932}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meadow.Modbus", "..\..\Meadow.Modbus\src\Meadow.Modbus\Meadow.Modbus.csproj", "{4971BCA8-2AD6-4CC6-994E-D618282EE655}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -205,6 +207,10 @@ Global
 		{F5F16035-4974-4620-ABF6-7AF002AEF932}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5F16035-4974-4620-ABF6-7AF002AEF932}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F5F16035-4974-4620-ABF6-7AF002AEF932}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{4971BCA8-2AD6-4CC6-994E-D618282EE655}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4971BCA8-2AD6-4CC6-994E-D618282EE655}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4971BCA8-2AD6-4CC6-994E-D618282EE655}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4971BCA8-2AD6-4CC6-994E-D618282EE655}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -228,6 +234,7 @@ Global
 		{B087ACEF-1DAE-4EE0-8741-5C1D2C5483FF} = {B50FBE1E-1AB9-4E20-AB86-64C1C0395EC8}
 		{9A23E0D5-C082-4F0F-B3DE-253C02981277} = {B50FBE1E-1AB9-4E20-AB86-64C1C0395EC8}
 		{957483A1-363F-453E-BC55-CFF884E3AC82} = {B50FBE1E-1AB9-4E20-AB86-64C1C0395EC8}
+		{4971BCA8-2AD6-4CC6-994E-D618282EE655} = {B50FBE1E-1AB9-4E20-AB86-64C1C0395EC8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6F17526E-EAAE-451F-B293-1384266E1FFC}
