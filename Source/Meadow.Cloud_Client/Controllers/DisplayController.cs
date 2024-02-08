@@ -1,5 +1,6 @@
 ﻿using Meadow.Foundation.Graphics;
 using Meadow.Foundation.Graphics.MicroLayout;
+using Meadow.Peripherals.Displays;
 using System.Collections.Generic;
 
 namespace Meadow.Cloud_Client.Controllers;
@@ -48,7 +49,7 @@ internal class DisplayController
 
     protected Label ConnectionErrorLabel { get; set; }
 
-    public DisplayController(IGraphicsDisplay display)
+    public DisplayController(IPixelDisplay display)
     {
         DisplayScreen = new DisplayScreen(display, RotationType._270Degrees)
         {
