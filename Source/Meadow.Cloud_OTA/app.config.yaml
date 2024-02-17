@@ -24,7 +24,7 @@ Logging:
 Update:
 
     # Enable Meadow.Cloud features
-#    Enabled: true
+    Enabled: true
 
 # Meadow.Cloud Health Metrics.
 HealthMetrics:
