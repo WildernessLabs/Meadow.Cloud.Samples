@@ -1,10 +1,9 @@
-﻿using Meadow.Cloud_OTA.Controllers;
-using Meadow.Cloud_OTA.Hardware;
+﻿using Meadow.Cloud_OTA.Hardware;
 using Meadow.Hardware;
 using Meadow.Update;
 using System.Threading.Tasks;
 
-namespace Meadow.Cloud_OTA
+namespace Meadow.Cloud_OTA.Controllers
 {
     internal class MainController
     {

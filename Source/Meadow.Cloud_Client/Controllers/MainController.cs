@@ -1,5 +1,4 @@
-﻿using Meadow.Cloud_Client.Controllers;
-using Meadow.Cloud_Client.Hardware;
+﻿using Meadow.Cloud_Client.Hardware;
 using Meadow.Hardware;
 using System;
 using System.Collections.Generic;
@@ -7,7 +6,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Meadow.Cloud_Client;
+namespace Meadow.Cloud_Client.Controllers;
 
 internal class MainController
 {
