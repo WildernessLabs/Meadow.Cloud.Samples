@@ -41,6 +41,13 @@ namespace Meadow.Cloud_Logging
         {
             hardware.RgbPwmLed.StartBlink(Color.Orange);
 
+            if (hardware.TemperatureSensor.Temperature == null ||
+                hardware.BarometricPressureSensor.Pressure == null ||
+                hardware.HumiditySensor.Humidity == null)
+            {
+                return;
+            }
+
             displayController.UpdateAtmosphericConditions(
                 temperature: $"{hardware.TemperatureSensor.Temperature.Value.Celsius:N0}",
                 pressure: $"{hardware.BarometricPressureSensor.Pressure.Value.Millibar:N0}",
