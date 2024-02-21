@@ -16,7 +16,7 @@ namespace Meadow.Cloud_OTA
 
         2. In a Terminal (in .csproj folder), type: 
 
-            meadow cloud package create
+            meadow cloud package create --name <filename>
 
         3. In a Terminal (in \bin\Release\netstandard2.1\mpak)
 
@@ -26,7 +26,7 @@ namespace Meadow.Cloud_OTA
 
         */
 
-        public double VERSION { get; set; } = 1.0;
+        public static double VERSION { get; set; } = 1.1;
 
         MainController mainController;
 

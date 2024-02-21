@@ -24,7 +24,7 @@ namespace Meadow.Cloud_OTA.Controllers
 
             displayScreen.Controls.Add(new Label(0, 127, displayScreen.Width, font12X16.Height * 2)
             {
-                Text = "App v1.0",
+                Text = $"App v{MeadowApp.VERSION}",
                 TextColor = Color.White,
                 Font = font12X16,
                 ScaleFactor = ScaleFactor.X2,
