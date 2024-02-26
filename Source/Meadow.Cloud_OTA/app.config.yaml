@@ -9,7 +9,7 @@ Lifecycle:
     RestartOnAppFailure: false
 
     # When app set to restart automatically on app failure, 
-#    AppFailureRestartDelaySeconds: 15
+    AppFailureRestartDelaySeconds: 15
 
 # Logging configuration.
 Logging:

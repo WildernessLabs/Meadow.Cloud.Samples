@@ -45,7 +45,7 @@ namespace Meadow.Cloud_OTA.Controllers
 
         private async void SvcOnUpdateAvailable(IUpdateService updateService, UpdateInfo info)
         {
-            _ = hardware.RgbPwmLed.StartBlink(Color.Orange);
+            _ = hardware.RgbPwmLed.StartBlink(Color.Magenta);
             displayController.UpdateStatus("Update available!");
 
             await Task.Delay(5000);
@@ -54,7 +54,7 @@ namespace Meadow.Cloud_OTA.Controllers
 
         private async void Svc_OnUpdateRetrieved(IUpdateService updateService, UpdateInfo info)
         {
-            _ = hardware.RgbPwmLed.StartBlink(Color.Yellow);
+            _ = hardware.RgbPwmLed.StartBlink(Color.Cyan);
             displayController.UpdateStatus("Update retrieved!");
 
             await Task.Delay(5000);
