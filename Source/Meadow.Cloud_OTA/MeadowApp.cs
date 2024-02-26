@@ -14,19 +14,19 @@ namespace Meadow.Cloud_OTA
 
         1. Bump VERSION value below
 
-        2. In a Terminal (in .csproj folder), type: 
+        2. Open a Terminal (VS2022 - View -> Terminal) and create an mpak file: 
 
-            meadow cloud package create --name <filename>
+            meadow cloud package create --name <filename>.mpak
 
-        3. In a Terminal (in \bin\Release\netstandard2.1\mpak)
+        3. Upload the mpak file to Meadow.Cloud:
 
-            meadow cloud package upload <filename.mpak>
+            meadow cloud package upload bin\Release\netstandard2.1\mpak\<filename>.mpak
 
-        4. Go to Meadow.Cloud site -> Packages, click Publish on the .mpak uploaded
+        4. Go to Meadow.Cloud (https://www.meadowcloud.co/) -> Packages, click Publish on the .mpak uploaded
 
         */
 
-        public static double VERSION { get; set; } = 1.1;
+        public static double VERSION { get; set; } = 1.2;
 
         MainController mainController;
 
