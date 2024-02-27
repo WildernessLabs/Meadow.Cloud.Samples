@@ -10,7 +10,9 @@ namespace Meadow.Cloud_OTA.Controllers
 
         private Font12x16 font12X16 = new Font12x16();
 
-        Label status;
+        private ProgressBar progressBar;
+        private Label progressValue;
+        private Label status;
 
         public DisplayController(IPixelDisplay display)
         {
@@ -39,11 +41,45 @@ namespace Meadow.Cloud_OTA.Controllers
                 HorizontalAlignment = HorizontalAlignment.Center
             };
             displayScreen.Controls.Add(status);
+
+            progressBar = new ProgressBar(90, 205, 140, 16)
+            {
+                BackColor = Color.Black,
+                ValueColor = backgroundColor,
+                BorderColor = Color.FromHex("4A3F33"),
+                IsVisible = false
+            };
+            displayScreen.Controls.Add(progressBar);
+
+            progressValue = new Label(90, 206, 140, 16)
+            {
+                Text = "0%",
+                TextColor = Color.White,
+                Font = font12X16,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                IsVisible = false
+            };
+            displayScreen.Controls.Add(progressValue);
         }
 
         public void UpdateStatus(string text)
         {
             status.Text = text;
+        }
+
+        public void UpdateDownloadProgress(int progress)
+        {
+            if (!progressBar.IsVisible)
+            {
+                progressBar.IsVisible = true;
+                progressValue.IsVisible = true;
+            }
+
+            progressBar.Value = progress;
+            progressValue.Text = $"{progress}%";
+
+            progressBar.IsVisible = !(progress == 100);
+            progressValue.IsVisible = !(progress == 100);
         }
     }
 }

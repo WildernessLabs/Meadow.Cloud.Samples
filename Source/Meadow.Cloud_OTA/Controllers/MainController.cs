@@ -47,9 +47,9 @@ namespace Meadow.Cloud_OTA.Controllers
 
         private void SvcOnUpdateProgress(IUpdateService updateService, UpdateInfo info)
         {
-            double percentage = (double)info.DownloadProgress / info.FileSize * 100;
+            short percentage = (short)(((double)info.DownloadProgress / info.FileSize) * 100);
 
-            displayController.UpdateStatus($"Downloading File...{percentage:N0}%");
+            displayController.UpdateDownloadProgress(percentage);
         }
 
         private async void SvcOnUpdateAvailable(IUpdateService updateService, UpdateInfo info)
