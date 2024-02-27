@@ -41,10 +41,15 @@ Before running any of the project samples below, make sure to go through the [Me
             <a href="Source/Meadow.Cloud_Logging/">Source Code</a>
         </td>
         <td>
+            <a href="Source/Meadow.Cloud_OTA/"><img src="Design/wildernesslabs-projectlab-meadow-cloud-ota-update.jpg"/></a><br/>
+            Use Meadow.Cloud to push Over-the-air Updates<br/>
+            <a href="Source/Meadow.Cloud_OTA/">Source Code</a>
+        </td>
+        <!--<td>
             <a href="Source/Meadow.Cloud_Client/"><img src="Design/wildernesslabs-projectlab-meadow-cloud-client.png"/></a><br/>
             Get log event data from Meadow.Cloud using its client API<br/>
             <a href="Source/Meadow.Cloud_Client/">Source Code</a>
-        </td>
+        </td>-->
         <td>
             <a href="Source/Meadow.Cloud_Command/"><img src="Design/wildernesslabs-projectlab-meadow-cloud-relay-command.png"/></a><br/>
             Use Meadow.Cloud commands to control a four channel relay</br>
