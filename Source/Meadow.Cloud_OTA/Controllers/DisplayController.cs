@@ -6,7 +6,7 @@ namespace Meadow.Cloud_OTA.Controllers
 {
     internal class DisplayController
     {
-        private Color backgroundColor = Color.FromHex("84705B");
+        private Color backgroundColor = Color.FromHex("10485E");
 
         private Font12x16 font12X16 = new Font12x16();
 
@@ -45,8 +45,8 @@ namespace Meadow.Cloud_OTA.Controllers
             progressBar = new ProgressBar(90, 205, 140, 16)
             {
                 BackColor = Color.Black,
-                ValueColor = backgroundColor,
-                BorderColor = Color.FromHex("4A3F33"),
+                ValueColor = Color.FromHex("0B3749"),
+                BorderColor = Color.FromHex("0B3749"),
                 IsVisible = false
             };
             displayScreen.Controls.Add(progressBar);
