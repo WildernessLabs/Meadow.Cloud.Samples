@@ -1,13 +1,11 @@
 ﻿using Meadow.Cloud_Command.Commands;
-using Meadow.Cloud_Command.Controllers;
 using Meadow.Cloud_Command.Hardware;
-using Meadow.Foundation;
 using Meadow.Hardware;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Meadow.Cloud_Command
+namespace Meadow.Cloud_Command.Controllers
 {
     internal class MainController
     {
@@ -63,8 +61,8 @@ namespace Meadow.Cloud_Command
                     case 1:
                     case 2:
                     case 3:
-                        hardware.FourChannelRelay.Relays[command.Relay].State = command.IsOn 
-                            ? Peripherals.Relays.RelayState.Open 
+                        hardware.FourChannelRelay.Relays[command.Relay].State = command.IsOn
+                            ? Peripherals.Relays.RelayState.Open
                             : Peripherals.Relays.RelayState.Closed;
                         break;
                     case 4:
@@ -73,7 +71,6 @@ namespace Meadow.Cloud_Command
                         else
                             hardware.FourChannelRelay.SetAllOff();
                         break;
-
                 }
 
                 displayController.UpdateRelayStatus(command.Relay, command.IsOn);

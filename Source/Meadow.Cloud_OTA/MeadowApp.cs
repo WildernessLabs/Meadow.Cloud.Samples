@@ -1,20 +1,48 @@
-﻿using Meadow.Devices;
-using Meadow.Update;
+﻿using Meadow.Cloud_OTA.Controllers;
+using Meadow.Cloud_OTA.Hardware;
+using Meadow.Devices;
+using Meadow.Hardware;
 using System.Threading.Tasks;
 
 namespace Meadow.Cloud_OTA
 {
     public class MeadowApp : App<F7CoreComputeV2>
     {
-        IProjectLabHardware projectLab;
+        /*
+        
+        OTA instructions:
+
+        1. Bump VERSION value below
+
+        2. Open a Terminal (VS2022 - View -> Terminal) and create an mpak file: 
+
+            meadow cloud package create --name <filename>.mpak
+
+        3. Upload the mpak file to Meadow.Cloud:
+
+            meadow cloud package upload bin\Release\netstandard2.1\mpak\<filename>.mpak
+
+        4. Go to Meadow.Cloud (https://www.meadowcloud.co/) -> Packages, click Publish on the .mpak uploaded
+
+        5. If/When Project Lab resets, you can still check its console output with the command:
+
+            meadow listen
+
+        */
+
+        public static double VERSION { get; set; } = 1.2;
+
+        MainController mainController;
 
         public override Task Initialize()
         {
             Resolver.Log.Info("Initialize...");
 
-            projectLab = ProjectLab.Create();
+            var hardware = new MeadowCloudOtaHardware();
+            var network = Device.NetworkAdapters.Primary<IWiFiNetworkAdapter>();
 
-            projectLab.RgbLed.StartBlink(Color.Green);
+            mainController = new MainController(hardware, network);
+            mainController.Initialize();
 
             return Task.CompletedTask;
         }
@@ -23,32 +51,7 @@ namespace Meadow.Cloud_OTA
         {
             Resolver.Log.Info("Run...");
 
-            var svc = Resolver.Services.Get<IUpdateService>() as UpdateService;
-            svc.ClearUpdates(); // uncomment to clear persisted info
-
-            svc.OnUpdateAvailable += (updateService, info) =>
-            {
-                projectLab.RgbLed.StartBlink(Color.Orange);
-                Resolver.Log.Info("Update available!");
-
-                Task.Run(async () =>
-                {
-                    await Task.Delay(5000);
-                    updateService.RetrieveUpdate(info);
-                });
-            };
-
-            svc.OnUpdateRetrieved += (updateService, info) =>
-            {
-                projectLab.RgbLed.StartBlink(Color.Yellow);
-                Resolver.Log.Info("Update retrieved!");
-
-                Task.Run(async () =>
-                {
-                    await Task.Delay(5000);
-                    updateService.ApplyUpdate(info);
-                });
-            };
+            mainController.Run();
 
             return Task.CompletedTask;
         }

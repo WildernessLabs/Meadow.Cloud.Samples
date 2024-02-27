@@ -1,5 +1,6 @@
 ﻿using Meadow.Foundation.Graphics;
 using Meadow.Foundation.Graphics.MicroLayout;
+using Meadow.Peripherals.Displays;
 
 namespace Meadow.Cloud_Command.Controllers
 {
@@ -39,7 +40,7 @@ namespace Meadow.Cloud_Command.Controllers
 
         protected Label LastUpdated { get; set; }
 
-        public DisplayController(IGraphicsDisplay display)
+        public DisplayController(IPixelDisplay display)
         {
             DisplayScreen = new DisplayScreen(display, RotationType._270Degrees)
             {
