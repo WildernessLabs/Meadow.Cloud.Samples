@@ -1,6 +1,8 @@
 ﻿using Meadow.Foundation.Graphics;
 using Meadow.Foundation.Graphics.MicroLayout;
 using Meadow.Peripherals.Displays;
+using System;
+using System.Threading;
 
 namespace Meadow.Cloud_OTA.Controllers
 {
@@ -26,7 +28,7 @@ namespace Meadow.Cloud_OTA.Controllers
 
             displayScreen.Controls.Add(new Label(0, 127, displayScreen.Width, font12X16.Height * 2)
             {
-                Text = $"App v{MeadowApp.VERSION}",
+                Text = $"App v{MeadowApp.VERSION:N1}",
                 TextColor = Color.White,
                 Font = font12X16,
                 ScaleFactor = ScaleFactor.X2,
@@ -78,8 +80,16 @@ namespace Meadow.Cloud_OTA.Controllers
             progressBar.Value = progress;
             progressValue.Text = $"{progress}%";
 
-            progressBar.IsVisible = !(progress == 100);
-            progressValue.IsVisible = !(progress == 100);
+            if (progress == 100)
+            {
+                UpdateStatus("Download Complete");
+
+                Thread.Sleep(TimeSpan.FromSeconds(3));
+
+                UpdateStatus(string.Empty);
+                progressBar.IsVisible = false;
+                progressValue.IsVisible = false;
+            }
         }
     }
 }

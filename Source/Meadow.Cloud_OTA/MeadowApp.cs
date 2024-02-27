@@ -24,6 +24,10 @@ namespace Meadow.Cloud_OTA
 
         4. Go to Meadow.Cloud (https://www.meadowcloud.co/) -> Packages, click Publish on the .mpak uploaded
 
+        5. If/When Project Lab resets, you can still check its console output with the command:
+
+            meadow listen
+
         */
 
         public static double VERSION { get; set; } = 1.2;
