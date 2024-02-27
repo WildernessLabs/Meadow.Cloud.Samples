@@ -1,5 +1,4 @@
-﻿using Meadow.Cloud_Logging.Controllers;
-using Meadow.Cloud_Logging.Hardware;
+﻿using Meadow.Cloud_Logging.Hardware;
 using Meadow.Hardware;
 using Meadow.Logging;
 using System;
@@ -7,7 +6,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Meadow.Cloud_Logging
+namespace Meadow.Cloud_Logging.Controllers
 {
     internal class MainController
     {
@@ -40,6 +39,13 @@ namespace Meadow.Cloud_Logging
         private void RecordSensor()
         {
             hardware.RgbPwmLed.StartBlink(Color.Orange);
+
+            if (hardware.TemperatureSensor.Temperature == null ||
+                hardware.BarometricPressureSensor.Pressure == null ||
+                hardware.HumiditySensor.Humidity == null)
+            {
+                return;
+            }
 
             displayController.UpdateAtmosphericConditions(
                 temperature: $"{hardware.TemperatureSensor.Temperature.Value.Celsius:N0}",

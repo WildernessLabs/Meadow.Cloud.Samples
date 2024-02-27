@@ -1,4 +1,5 @@
-﻿using Meadow.Cloud_Logging.Hardware;
+﻿using Meadow.Cloud_Logging.Controllers;
+using Meadow.Cloud_Logging.Hardware;
 using Meadow.Devices;
 using Meadow.Hardware;
 using System.Threading.Tasks;
